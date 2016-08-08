@@ -1,0 +1,372 @@
+﻿<Window x:Class="OxyPro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Comparism of some Numerical Methods for solving non-linear equations." Height="660" Width="1200" WindowState="Maximized">
+    <Grid>
+        <GroupBox Header="Bisection Method" Height="640" HorizontalAlignment="Left" Name="groupBox1" VerticalAlignment="Top" Width="355">
+            <Grid>
+                <TabControl Name="tabc1" SelectionChanged="tabc1_SelectionChanged">
+                    <TabItem Header="Example 1">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="0,460,0,6" Height="119" Width="337">
+                                <TextBlock x:Name="ex1txtmth1" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,171,0" Name="Ex1mth1atextbox" VerticalAlignment="Top" Text="1"/>
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label1" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,131,0" Name="Ex1mth1btextbox" VerticalAlignment="Top" Text="2"/>
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="247,1,0,0" Name="Ex1mth1button" VerticalAlignment="Top" Width="75" Click="Ex1mth1button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="290,0,0,540" Name="label2" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label2_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                            <StackPanel Height="370" Name="stackPanel1" VerticalAlignment="Top" Width="304" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex1mth1a" Width="80" Margin="10,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth1a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex1mth1b" Width="80" Margin="0,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth1b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex1mth1c" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth1c_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                           </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 2">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="0,460,0,6" Height="119" Width="337">
+                                <TextBlock x:Name="ex2txtmth1" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,171,0" Name="Ex2mth1atextbox" VerticalAlignment="Top" Text="0.5"/>
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label3" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,131,0" Name="Ex2mth1btextbox" VerticalAlignment="Top" Text="1.5"/>
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="247,1,0,0" Name="Ex2mth1button" VerticalAlignment="Top" Width="75" Click="Ex2mth1button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="291,0,0,540" Name="label4" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label4_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel2" VerticalAlignment="Top" Width="304" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex2mth1a" Width="80" Margin="10,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth1a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex2mth1b" Width="80" Margin="0,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth1b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex2mth1c" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth1c_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 3">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="0,460,0,6" Height="119" Width="337">
+                                <TextBlock x:Name="ex3txtmth1" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,171,0" Name="Ex3mth1atextbox" VerticalAlignment="Top" Text="1.5"/>
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label5" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,131,0" Name="Ex3mth1btextbox" VerticalAlignment="Top" Text="2.5"/>
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="247,1,0,0" Name="Ex3mth1button" VerticalAlignment="Top" Width="75" Click="Ex3mth1button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="291,0,0,540" Name="label6" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label6_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel3" VerticalAlignment="Top" Width="304" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex3mth1a" Width="80" Margin="10,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth1a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex3mth1b" Width="80" Margin="0,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth1b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex3mth1c" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth1c_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 4">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="0,460,0,6" Height="119" Width="337">
+                                <TextBlock x:Name="ex4txtmth1" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,171,0" Name="Ex4mth1atextbox" VerticalAlignment="Top" Text="0.5"/>
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label7" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,131,0" Name="Ex4mth1btextbox" VerticalAlignment="Top" Text="1.5"/>
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="247,1,0,0" Name="Ex4mth1button" VerticalAlignment="Top" Width="75" Click="Ex4mth1button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="291,0,0,540" Name="label8" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label8_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel4" VerticalAlignment="Top" Width="304" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex4mth1a" Width="80" Margin="10,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth1a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex4mth1b" Width="80" Margin="0,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth1b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex4mth1c" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth1c_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+               
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Secant Method" Height="640" HorizontalAlignment="Left" Name="groupBox2" VerticalAlignment="Top" Width="355" Margin="361,0,0,0">
+            <Grid>
+                <TabControl Name="tabc2" SelectionChanged="tabc2_SelectionChanged">
+                    <TabItem Header="Example 1">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="0,460,0,6" Height="119" Width="337">
+                                <TextBlock x:Name="ex1txtmth2" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,171,0" Name="Ex1mth2atextbox" VerticalAlignment="Top" Text="1"/>
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label9" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,131,0" Name="Ex1mth2btextbox" VerticalAlignment="Top" Text="2"/>
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="247,1,0,0" Name="Ex1mth2button" VerticalAlignment="Top" Width="75" Click="Ex1mth2button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="291,0,0,540" Name="label10" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label10_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel5" VerticalAlignment="Top" Width="304" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex1mth2a" Width="80" Margin="10,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth2a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex1mth2b" Width="80" Margin="0,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth2b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex1mth2c" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth2c_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 2">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="0,460,0,6" Height="119" Width="337">
+                                <TextBlock x:Name="ex2txtmth2" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,171,0" Name="Ex2mth2atextbox" VerticalAlignment="Top" Text="0.5"/>
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label11" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,131,0" Name="Ex2mth2btextbox" VerticalAlignment="Top" Text="1.5"/>
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="247,1,0,0" Name="Ex2mth2button" VerticalAlignment="Top" Width="75" Click="Ex2mth2button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="291,0,0,540" Name="label12" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label12_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel6" VerticalAlignment="Top" Width="304" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex2mth2a" Width="80" Margin="10,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth2a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex2mth2b" Width="80" Margin="0,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth2b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex2mth2c" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth2c_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 3">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="0,460,0,6" Height="119" Width="337">
+                                <TextBlock x:Name="ex3txtmth2" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,171,0" Name="Ex3mth2atextbox" VerticalAlignment="Top" Text="1.5"/>
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label13" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,131,0" Name="Ex3mth2btextbox" VerticalAlignment="Top" Text="2.5"/>
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="247,1,0,0" Name="Ex3mth2button" VerticalAlignment="Top" Width="75" Click="Ex3mth2button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="291,0,0,540" Name="label14" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label14_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel7" VerticalAlignment="Top" Width="304" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex3mth2a" Width="80" Margin="10,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth2a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex3mth2b" Width="80" Margin="0,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth2b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex3mth2c" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth2c_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 4">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="0,460,0,6" Height="119" Width="337">
+                                <TextBlock x:Name="ex4txtmth2" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,171,0" Name="Ex4mth2atextbox" VerticalAlignment="Top" Text="0.5"/>
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label15" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,131,0" Name="Ex4mth2btextbox" VerticalAlignment="Top" Text="1.5"/>
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="247,1,0,0" Name="Ex4mth2button" VerticalAlignment="Top" Width="75" Click="Ex4mth2button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="291,0,0,540" Name="label16" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label16_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel8" VerticalAlignment="Top" Width="304" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex4mth2a" Width="80" Margin="10,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth2a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex4mth2b" Width="80" Margin="0,0,25,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth2b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex4mth2c" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth2c_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Newton's Method" Height="640" HorizontalAlignment="Left" Name="groupBox3" VerticalAlignment="Top" Width="444" Margin="722,-2,0,0">
+            <Grid>
+                <TabControl Name="tabc3" SelectionChanged="tabc3_SelectionChanged">
+                    <TabItem Header="Example 1">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="2,460,0,0" Height="119" Width="424">
+                                <TextBlock x:Name="ex1txtmth3" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,249,0" Name="Ex1mth3atextbox" VerticalAlignment="Top" Text="1" Width="34" />
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label17" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,220,0" Name="Ex1mth3btextbox" VerticalAlignment="Top" Text="" Width="23" />
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="336,2,0,0" Name="Ex1mth3button" VerticalAlignment="Top" Width="75" Click="Ex1mth3button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="380,0,0,538" Name="label18" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label18_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,70,0" />
+                                    <Label Content="f(x)" Margin="0,0,70,0" />
+                                    <Label Content="f'(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel9" VerticalAlignment="Top" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex1mth3a" Width="80" Margin="10,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth3a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex1mth3b" Width="80" Margin="0,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth3b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex1mth3c" Width="80" Margin="0,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth3c_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex1mth3d" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex1mth3d_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 2">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="-1,460,0,0" Height="119" Width="427">
+                                <TextBlock x:Name="ex2txtmth3" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,249,0" Name="Ex2mth3atextbox" VerticalAlignment="Top" Text="0.5" Width="34" />
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label19" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="183,4,0,0" Name="Ex2mth3btextbox" VerticalAlignment="Top" Text="" Width="35" HorizontalAlignment="Left" />
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="334,0,0,0" Name="Ex2mth3button" VerticalAlignment="Top" Width="75" Click="Ex2mth3button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="378,0,0,538" Name="label20" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label20_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)" Margin="0,0,65,0" />
+                                    <Label Content="f'(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel10" VerticalAlignment="Top" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex2mth3a" Width="80" Margin="10,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth3a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex2mth3b" Width="80" Margin="0,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth3b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex2mth3c" Width="80" Margin="0,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth3c_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex2mth3d" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex2mth3d_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 3">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="-1,460,0,6" Height="119" Width="426">
+                                <TextBlock x:Name="ex3txtmth3" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,260,0" Name="Ex3mth3atextbox" VerticalAlignment="Top" Text="1.5" Width="23" />
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label21" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="0,4,220,0" Name="Ex3mth3btextbox" VerticalAlignment="Top" Text="" Width="23" HorizontalAlignment="Right" />
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="334,1,0,0" Name="Ex3mth3button" VerticalAlignment="Top" Width="75" Click="Ex3mth3button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="378,0,0,538" Name="label22" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label22_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)" Margin="0,0,65,0" />
+                                    <Label Content="f'(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel11" VerticalAlignment="Top" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex3mth3a" Width="80" Margin="10,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth3a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex3mth3b" Width="80" Margin="0,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth3b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex3mth3c" Width="80" Margin="0,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth3c_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex3mth3d" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex3mth3d_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Example 4">
+                        <Grid>
+                            <TextBlock Text="Enter Intervals [" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
+                            <ScrollViewer Margin="-1,460,0,0" Height="119" Width="427">
+                                <TextBlock x:Name="ex4txtmth3" Text="Comments:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <TextBox Height="23" Margin="143,4,249,0" Name="Ex4mth3atextbox" VerticalAlignment="Top" Text="0.5" Width="34" />
+                            <Label Content="," Height="28" HorizontalAlignment="Left" Margin="172,0,0,0" Name="label23" VerticalAlignment="Top" />
+                            <TextBox Height="23" Margin="0,4,220,0" Name="Ex4mth3btextbox" VerticalAlignment="Top" Text="" Width="23" HorizontalAlignment="Right" />
+                            <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="212,0,0,0" Text="]" VerticalAlignment="Top" />
+                            <Button Content="Calculate" Height="23" HorizontalAlignment="Left" Margin="334,2,0,0" Name="Ex4mth3button" VerticalAlignment="Top" Width="75" Click="Ex4mth3button_Click" />
+                            <Button Content="Clear" Height="21" HorizontalAlignment="Left" Margin="378,0,0,538" Name="label24" VerticalAlignment="Bottom" Width="31" FontWeight="Bold" FontSize="8" Click="label24_Click" />
+                            <StackPanel Height="467" Margin="0,4,0,0">
+                                <StackPanel Height="25" VerticalAlignment="Top" Orientation="Horizontal">
+                                    <Label Content="Index" Margin="30,0,80,0"/>
+                                    <Label Content="x" Margin="0,0,80,0" />
+                                    <Label Content="f(x)" Margin="0,0,65,0" />
+                                    <Label Content="f'(x)"/>
+                                </StackPanel>
+                                <ScrollViewer Height="375">
+                                    <StackPanel Height="370" Name="stackPanel12" VerticalAlignment="Top" Orientation="Horizontal">
+                                        <ListView Height="370" Name="listViewex4mth3a" Width="80" Margin="10,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth3a_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex4mth3b" Width="80" Margin="0,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth3b_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex4mth3c" Width="80" Margin="0,0,20,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth3c_SelectionChanged" />
+                                        <ListView Height="370" Name="listViewex4mth3d" Width="80" Margin="0,0,0,0" VerticalAlignment="Top" SelectionChanged="listViewex4mth3d_SelectionChanged" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
